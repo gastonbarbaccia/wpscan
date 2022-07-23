@@ -12,13 +12,13 @@ jobs:
     steps:
       - name: WPScan
         run: |
-             apt install ruby
-             apt install build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev  libgmp-dev zlib1g-dev
-             gem install wpscan
-             wpscan --update
+             sudo apt install ruby
+             sudo apt install build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev  libgmp-dev zlib1g-dev
+             sudo gem install wpscan
+             sudo wpscan --update
       - name: Scan Results
         run: |
-             wpscan --url www.unso.edu.ar --disable-tls-checks --api-token jFrzZHnIqAJ02cS97a5F3zLw0eS7sI8oozF8YtVrtdE --output=report.json
+             sudo wpscan --url www.unso.edu.ar --disable-tls-checks --api-token jFrzZHnIqAJ02cS97a5F3zLw0eS7sI8oozF8YtVrtdE --output=report.json
     
 #           echo ${{ steps.wpscan.outputs.result }} > result.json
       - name: Upload Test results
