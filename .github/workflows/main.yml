@@ -12,10 +12,10 @@ jobs:
         with:
           url: 'https://www.unso.edu.ar'
       - name: Scan Results
-        run: ls
-#          echo ${{ steps.wpscan.outputs.result }}
-#      - name: Upload Test results
-#        uses: actions/upload-artifact@master
-#        with:
-#           name: Wpscan Report
-#           path: ${{github.workspace}}/
+        run: |
+           echo ${{ steps.wpscan.outputs.result }} > result.json
+      - name: Upload Test results
+        uses: actions/upload-artifact@master
+        with:
+           name: Wpscan Report
+           path: ${{github.workspace}}/
