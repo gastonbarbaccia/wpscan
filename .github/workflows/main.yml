@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: WPScan
-        uses: WTFender/wpscan-action@v1.0
-        id: wpscan
-        with:
-          url: 'https://www.unso.edu.ar'
+        run: |
+             apt install ruby
+             apt install build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev  libgmp-dev zlib1g-dev
+             gem install wpscan
+             wpscan --update
       - name: Scan Results
         run: |
              wpscan --url www.unso.edu.ar --disable-tls-checks --api-token jFrzZHnIqAJ02cS97a5F3zLw0eS7sI8oozF8YtVrtdE --output=report.json
