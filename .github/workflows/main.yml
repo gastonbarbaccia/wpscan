@@ -12,9 +12,8 @@ jobs:
         with:
           url: 'https://www.unso.edu.ar'
       - name: Scan Results
-        run: |
-          echo ${{ steps.wpscan.outputs.result }}
-          ls
+        run: ls
+#          echo ${{ steps.wpscan.outputs.result }}
 #      - name: Upload Test results
 #        uses: actions/upload-artifact@master
 #        with:
