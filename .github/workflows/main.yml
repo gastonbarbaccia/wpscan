@@ -16,7 +16,7 @@ jobs:
              sudo apt install build-essential libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev  libgmp-dev zlib1g-dev
              sudo gem install wpscan
              sudo wpscan --update
-              sudo wpscan --url www.unso.edu.ar --disable-tls-checks --api-token jFrzZHnIqAJ02cS97a5F3zLw0eS7sI8oozF8YtVrtdE --output=report.json
+             wpscan --url www.unso.edu.ar
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
