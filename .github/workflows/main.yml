@@ -6,7 +6,6 @@ env:
   DEFECTDOJO_SERVER : http://ec2-3-128-87-52.us-east-2.compute.amazonaws.com:8080
   URL: https://www.unso.edu.ar/
 
-
 jobs:
   WPScan:
     runs-on: ubuntu-latest
