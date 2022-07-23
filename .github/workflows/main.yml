@@ -14,8 +14,9 @@ jobs:
       - name: Scan Results
         run: |
           echo ${{ steps.wpscan.outputs.result }}
-      - name: Upload Test results
-        uses: actions/upload-artifact@master
-        with:
-           name: Wpscan Report
-           path: ${{github.workspace}}/
+          ls
+#      - name: Upload Test results
+#        uses: actions/upload-artifact@master
+#        with:
+#           name: Wpscan Report
+#           path: ${{github.workspace}}/
