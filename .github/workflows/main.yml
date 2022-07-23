@@ -1,0 +1,17 @@
+name: Escaneo de vulnerabilidades
+
+on: push
+
+jobs:
+  wpscan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: WPScan
+        uses: WTFender/wpscan-action@v1.0
+        id: wpscan
+        with:
+          url: 'https://www.unso.edu.ar'
+      - name: Scan Results
+        run: |
+          echo ${{ steps.wpscan.outputs.resultb64 }}
+          echo ${{ steps.wpscan.outputs.result }}
