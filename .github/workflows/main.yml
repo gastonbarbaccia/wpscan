@@ -4,7 +4,7 @@ on: push
 
 env:
   DEFECTDOJO_SERVER : http://ec2-3-128-87-52.us-east-2.compute.amazonaws.com:8080
-  URL: https://adultswithautism.org.uk/
+  URL: https://www.unso.edu.ar/
 
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
              sudo gem install wpscan
              sudo wpscan --update
              echo "Ejecutando escaneo..."
-             wpscan --url ${{ env.URL }} --disable-tls-checks --random-user-agent --output result.json --format json
+             wpscan --url ${{ env.URL }} --disable-tls-checks --detection-mode aggressive --random-user-agent --output result.json --format json
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
