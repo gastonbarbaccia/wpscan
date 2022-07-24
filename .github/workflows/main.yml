@@ -3,8 +3,8 @@ name: Escaneo de vulnerabilidades
 on: push
 
 env:
-  DEFECTDOJO_SERVER : http://ec2-3-128-87-52.us-east-2.compute.amazonaws.com:8080
-  URL: https://www.unso.edu.ar/
+  DEFECTDOJO_SERVER : http://ec2-3-140-192-162.us-east-2.compute.amazonaws.com:8080
+  URL: https://www.karmecholing.org/
 
 jobs:
   WPScan:
