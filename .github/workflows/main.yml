@@ -4,7 +4,7 @@ on: push
 
 env:
   DEFECTDOJO_SERVER : http://ec2-3-140-192-162.us-east-2.compute.amazonaws.com:8080
-  URL: https://www.karmecholing.org/
+  URL: https://thenativa.com/
 
 jobs:
   WPScan:
@@ -17,7 +17,7 @@ jobs:
              sudo gem install wpscan
              sudo wpscan --update
              echo "Ejecutando escaneo..."
-             wpscan --url ${{ env.URL }} --api-token jFrzZHnIqAJ02cS97a5F3zLw0eS7sI8oozF8YtVrtdE --disable-tls-checks --detection-mode aggressive --random-user-agent --output result.json --format json
+             wpscan --url ${{ env.URL }} --disable-tls-checks --detection-mode aggressive --random-user-agent --output result.json --format json
       - name: Upload Test results
         uses: actions/upload-artifact@master
         with:
